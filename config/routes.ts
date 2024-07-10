@@ -7,8 +7,8 @@ export default [
     access: 'canAdmin',
     name: "管理页",
     routes: [
-      { path: '/admin', redirect: '/admin/sub-page' },
-      { path: '/admin/sub-page', component: './Admin', name: "管理子页" },
+      { path: '/admin', redirect: '/admin/interface' },
+      { path: '/admin/interface', component: './Admin/InterfaceInfo', name: "接口管理" },
       { icon: 'table', path: '/admin/user', component: './Admin/User', name: "用户管理" },
     ],
   },

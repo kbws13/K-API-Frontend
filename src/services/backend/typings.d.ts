@@ -5,6 +5,12 @@ declare namespace API {
     message?: string;
   };
 
+  type BaseResponseInterfaceInfo_ = {
+    code?: number;
+    data?: InterfaceInfo;
+    message?: string;
+  };
+
   type BaseResponseLoginUserVO_ = {
     code?: number;
     data?: LoginUserVO;
@@ -55,6 +61,11 @@ declare namespace API {
 
   type DeleteRequest = {
     id?: string;
+  };
+
+  type getInterfaceByIdUsingGETParams = {
+    /** id */
+    id: string;
   };
 
   type getUserByIdUsingGETParams = {

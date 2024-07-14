@@ -1,6 +1,5 @@
 import { listInterfaceUsingPost } from '@/services/backend/interfaceInfoController';
 import { PageContainer } from '@ant-design/pro-components';
-import { useModel } from '@umijs/max';
 import { Card, List, message, theme } from 'antd';
 import React, { useEffect, useState } from 'react';
 
@@ -36,11 +35,14 @@ const Index: React.FC = () => {
         loading={loading} 
         itemLayout='horizontal' 
         dataSource={list}
-        renderItem={item => (
-          <List.Item actions={[<a key="list-edit">查看</a>]}>
-            <List.Item.Meta title={<a href='https://kbws.xyz'>{item.name}</a>} description={item.description} />
-          </List.Item>
-        )}
+        renderItem={(item) => {
+          const apiLink = `/interface_info/${item.id}`;
+          return (
+            <List.Item actions={[<a href={apiLink}>查看</a>]}>
+              <List.Item.Meta title={<a href={apiLink}>{item.name}</a>} description={item.description} />
+            </List.Item>
+          )
+      }}
         pagination={
           {
             // @ts-ignore

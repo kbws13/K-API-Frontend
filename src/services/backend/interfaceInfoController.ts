@@ -46,6 +46,21 @@ export async function getInterfaceByIdUsingGet(
   });
 }
 
+/** 调用接口 POST /api/interfaceInfo/invoke */
+export async function invokeInterfaceUsingPost(
+  body: API.InterfaceInfoInvokeRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseObject_>('/api/interfaceInfo/invoke', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
 /** 查询 POST /api/interfaceInfo/list */
 export async function listInterfaceUsingPost(
   body: API.InterfaceInfoQueryRequest,

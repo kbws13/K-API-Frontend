@@ -70,6 +70,7 @@ const UserAdminPage: React.FC = () => {
       dataIndex: 'id',
       valueType: 'text',
       hideInForm: true,
+      hideInSearch: true,
     },
     {
       title: '接口名称',
@@ -89,17 +90,25 @@ const UserAdminPage: React.FC = () => {
     {
       title: '请求头',
       dataIndex: 'requestHeader',
-      valueType: 'textarea',
+      valueType: 'jsonCode',
+      width: 300
     },
     {
       title: '响应头',
       dataIndex: 'responseHeader',
-      valueType: 'textarea',
+      valueType: 'jsonCode',
+      width: 300
     },
     {
       title: '接口地址',
       dataIndex: 'url',
       valueType: 'text'
+    },
+    {
+      title: '请求参数',
+      dataIndex: 'requestParams',
+      valueType: 'jsonCode',
+      width: 300
     },
     {
       title: '状态',
@@ -135,6 +144,9 @@ const UserAdminPage: React.FC = () => {
       title: '操作',
       dataIndex: 'option',
       valueType: 'option',
+      fixed: 'right',
+      width: 162,
+      align: 'center',
       render: (_, record) => (
         <Space size="middle">
           <Typography.Link
@@ -165,6 +177,7 @@ const UserAdminPage: React.FC = () => {
         search={{
           labelWidth: 120,
         }}
+        scroll={{x: 2000}}
         toolBarRender={() => [
           <Button
             type="primary"

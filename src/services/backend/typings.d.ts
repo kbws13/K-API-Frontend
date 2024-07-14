@@ -67,6 +67,10 @@ declare namespace API {
     id?: string;
   };
 
+  type IdRequest = {
+    id?: string;
+  };
+
   type InterfaceInfo = {
     createTime?: string;
     description?: string;
@@ -76,7 +80,7 @@ declare namespace API {
     name?: string;
     requestHeader?: string;
     responseHeader?: string;
-    stratus?: number;
+    status?: number;
     updateTime?: string;
     url?: string;
     userId?: string;
@@ -102,7 +106,7 @@ declare namespace API {
     responseHeader?: string;
     sortField?: string;
     sortOrder?: string;
-    stratus?: number;
+    status?: number;
     url?: string;
     userId?: string;
   };
@@ -114,7 +118,7 @@ declare namespace API {
     name?: string;
     requestHeader?: string;
     responseHeader?: string;
-    stratus?: number;
+    status?: number;
     url?: string;
   };
 
@@ -143,7 +147,7 @@ declare namespace API {
     records?: InterfaceInfo[];
     searchCount?: boolean;
     size?: string;
-    total?: string;
+    total?: number;
   };
 
   type PageUser_ = {
@@ -180,8 +184,6 @@ declare namespace API {
     createTime?: string;
     id?: string;
     isDelete?: number;
-    mpOpenId?: string;
-    unionId?: string;
     updateTime?: string;
     userAccount?: string;
     userAvatar?: string;
@@ -206,11 +208,9 @@ declare namespace API {
   type UserQueryRequest = {
     current?: number;
     id?: string;
-    mpOpenId?: string;
     pageSize?: number;
     sortField?: string;
     sortOrder?: string;
-    unionId?: string;
     userName?: string;
     userProfile?: string;
     userRole?: string;

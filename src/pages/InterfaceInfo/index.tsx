@@ -1,5 +1,3 @@
-import CreateModal from '@/pages/Admin/InterfaceInfo/components/CreateModal';
-import UpdateModal from '@/pages/Admin/InterfaceInfo/components/UpdateModal';
 import { PlusOutlined } from '@ant-design/icons';
 import type { ActionType, ProColumns } from '@ant-design/pro-components';
 import { PageContainer, ProTable } from '@ant-design/pro-components';
@@ -194,30 +192,6 @@ const UserAdminPage: React.FC = () => {
           };
         }}
         columns={columns}
-      />
-      <CreateModal
-        visible={createModalVisible}
-        columns={columns}
-        onSubmit={() => {
-          setCreateModalVisible(false);
-          actionRef.current?.reload();
-        }}
-        onCancel={() => {
-          setCreateModalVisible(false);
-        }}
-      />
-      <UpdateModal
-        visible={updateModalVisible}
-        columns={columns}
-        oldData={currentRow}
-        onSubmit={() => {
-          setUpdateModalVisible(false);
-          setCurrentRow(undefined);
-          actionRef.current?.reload();
-        }}
-        onCancel={() => {
-          setUpdateModalVisible(false);
-        }}
       />
     </PageContainer>
   );

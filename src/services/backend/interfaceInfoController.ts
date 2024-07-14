@@ -47,6 +47,36 @@ export async function listInterfaceUsingPost(
   });
 }
 
+/** 下线接口 POST /api/interfaceInfo/offline */
+export async function offlineInterfaceUsingPost(
+  body: API.IdRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseBoolean_>('/api/interfaceInfo/offline', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** 发布接口 POST /api/interfaceInfo/online */
+export async function onlineInterfaceUsingPost(
+  body: API.IdRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseBoolean_>('/api/interfaceInfo/online', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
 /** 更新 POST /api/interfaceInfo/update */
 export async function updateInterfaceUsingPost(
   body: API.InterfaceInfoUpdateRequest,

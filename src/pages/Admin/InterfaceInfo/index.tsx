@@ -13,7 +13,7 @@ import { deleteInterfaceUsingPost, listInterfaceUsingPost, offlineInterfaceUsing
  *
  * @constructor
  */
-const UserAdminPage: React.FC = () => {
+const InterfaceInfoPage: React.FC = () => {
   const actionRef = useRef<ActionType>();
 
   // 是否显示新建窗口
@@ -235,4 +235,4 @@ const UserAdminPage: React.FC = () => {
     </PageContainer>
   );
 };
-export default UserAdminPage;
+export default InterfaceInfoPage;

@@ -11,6 +11,12 @@ declare namespace API {
     message?: string;
   };
 
+  type BaseResponseListInterfaceInfoVO_ = {
+    code?: number;
+    data?: InterfaceInfoVO[];
+    message?: string;
+  };
+
   type BaseResponseLoginUserVO_ = {
     code?: number;
     data?: LoginUserVO;
@@ -41,6 +47,12 @@ declare namespace API {
     message?: string;
   };
 
+  type BaseResponsePageUserInterfaceInfo_ = {
+    code?: number;
+    data?: PageUserInterfaceInfo_;
+    message?: string;
+  };
+
   type BaseResponsePageUserVO_ = {
     code?: number;
     data?: PageUserVO_;
@@ -59,6 +71,12 @@ declare namespace API {
     message?: string;
   };
 
+  type BaseResponseUserInterfaceInfo_ = {
+    code?: number;
+    data?: UserInterfaceInfo;
+    message?: string;
+  };
+
   type BaseResponseUserVO_ = {
     code?: number;
     data?: UserVO;
@@ -67,6 +85,11 @@ declare namespace API {
 
   type DeleteRequest = {
     id?: string;
+  };
+
+  type getInterfaceByIdUsingGET1Params = {
+    /** id */
+    id: string;
   };
 
   type getInterfaceByIdUsingGETParams = {
@@ -148,6 +171,23 @@ declare namespace API {
     url?: string;
   };
 
+  type InterfaceInfoVO = {
+    createTime?: string;
+    description?: string;
+    id?: string;
+    isDelete?: number;
+    method?: string;
+    name?: string;
+    requestHeader?: string;
+    requestParams?: string;
+    responseHeader?: string;
+    status?: number;
+    totalNum?: number;
+    updateTime?: string;
+    url?: string;
+    userId?: string;
+  };
+
   type LoginUserVO = {
     createTime?: string;
     id?: string;
@@ -189,6 +229,19 @@ declare namespace API {
     total?: string;
   };
 
+  type PageUserInterfaceInfo_ = {
+    countId?: string;
+    current?: string;
+    maxLimit?: string;
+    optimizeCountSql?: boolean;
+    orders?: OrderItem[];
+    pages?: string;
+    records?: UserInterfaceInfo[];
+    searchCount?: boolean;
+    size?: string;
+    total?: string;
+  };
+
   type PageUserVO_ = {
     countId?: string;
     current?: string;
@@ -224,6 +277,39 @@ declare namespace API {
     userAvatar?: string;
     userName?: string;
     userRole?: string;
+  };
+
+  type UserInterfaceInfo = {
+    createTime?: string;
+    id?: string;
+    interfaceId?: string;
+    isDelete?: number;
+    leftNum?: number;
+    status?: number;
+    totalNum?: number;
+    updateTime?: string;
+    userId?: string;
+  };
+
+  type UserInterfaceInfoAddRequest = {
+    interfaceId?: string;
+    leftNum?: number;
+    status?: number;
+    totalNum?: number;
+    userId?: string;
+  };
+
+  type UserInterfaceInfoQueryRequest = {
+    current?: number;
+    id?: string;
+    interfaceId?: string;
+    leftNum?: number;
+    pageSize?: number;
+    sortField?: string;
+    sortOrder?: string;
+    status?: number;
+    totalNum?: number;
+    userId?: string;
   };
 
   type UserLoginRequest = {

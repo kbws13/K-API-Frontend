@@ -16,6 +16,7 @@ export default [
     routes: [
       { path: '/admin', redirect: '/admin/interface' },
       { path: '/admin/interface', component: './Admin/InterfaceInfo', name: "接口管理" },
+      { path: '/admin/interface_analysis', component: './Admin/InterfaceAnalysis', name: "接口分析" },
       { icon: 'table', path: '/admin/user', component: './Admin/User', name: "用户管理" },
     ],
   },

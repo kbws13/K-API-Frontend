@@ -62,8 +62,8 @@ const Login: React.FC = () => {
             maxWidth: '75vw',
           }}
           logo={<img alt="logo" src="/logo.svg" />}
-          title="前端模板"
-          subTitle={'为了快速开发项目'}
+          title="K-API"
+          subTitle={'API开放平台'}
           initialValues={{
             autoLogin: true,
           }}
